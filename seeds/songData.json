@@ -1,0 +1,20 @@
+[
+    {
+        "song": "Nights",
+        "artist": "Frank Ocean",
+        "albumn": "blond",
+        "genre":"R&B"
+    },
+    {
+        "song": "56 Nights",
+        "artist": "Future",
+        "albumn": "56 Nights",
+        "genre":"Rap"
+    },
+    {
+        "song": "Watermelon Sugar",
+        "artist": "Harry Styles",
+        "albumn": "Fine Line",
+        "genre":"Pop"
+    }
+]
