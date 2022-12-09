@@ -11,7 +11,18 @@ Song.init(
         primaryKey: true,
         autoIncrement: true,
       },
-      spotify_songid: {
+      song_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      artist: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      album: {
+        type: DataTypes.STRING,
+      },
+      genre: {
         type: DataTypes.STRING,
         allowNull: false,
       },

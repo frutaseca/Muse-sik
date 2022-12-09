@@ -11,6 +11,10 @@ Playlist.init(
         primaryKey: true,
         autoIncrement: true,
       },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       song_id: {
         type: DataTypes.INTEGER,
         references: {

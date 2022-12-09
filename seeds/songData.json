@@ -1,18 +1,18 @@
 [
     {
-        "song": "Nights",
+        "song_name": "Nights",
         "artist": "Frank Ocean",
         "albumn": "blond",
         "genre":"R&B"
     },
     {
-        "song": "56 Nights",
+        "song_name": "56 Nights",
         "artist": "Future",
         "albumn": "56 Nights",
         "genre":"Rap"
     },
     {
-        "song": "Watermelon Sugar",
+        "song_name": "Watermelon Sugar",
         "artist": "Harry Styles",
         "albumn": "Fine Line",
         "genre":"Pop"
