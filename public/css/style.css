@@ -1,0 +1,119 @@
+* {
+  font-family: Garamond, "Times New Roman", Times, serif;
+  margin: 0;
+  color: #d8dadb;
+}
+
+:root {
+  --trans-black: rgb(0, 0, 0, 0.7);
+  --dark-tan: #4d3618d2;
+  --orange: rgba(202, 73, 40, 0.925);
+  --white: #d8dadb;
+}
+header {
+  background-color: var(--trans-black);
+}
+img {
+  max-width: 5rem;
+  margin: 1.15rem;
+}
+/* nav {
+    display: none;
+}
+button#btn-menu {
+  display: none;
+} */
+
+/* form {
+  display: none;
+} */
+button#logout {
+  background-color: transparent;
+  border: none;
+}
+
+a#btn-login {
+  padding-right: 1.5rem;
+}
+a,
+a#btn-login {
+  color: var(--white);
+  text-align: center;
+  text-decoration: none;
+}
+a:hover,
+a:focus,
+a#btn-login:hover,
+a#btn-login:focus,
+button#logout:hover,
+button#logout:focus {
+  color: var(--white);
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+  font-size: larger;
+}
+button#btn-menu {
+  background-color: rgb(0, 0, 0, 0);
+  border: none;
+  border-radius: 5px;
+}
+
+button#btn-menu i:hover,
+button#btn-menu i:focus {
+  font-size: larger;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+}
+
+button i {
+  padding: 1rem;
+  font-size: 1rem;
+}
+nav ul {
+  background-color: rgba(49, 47, 47, 0.345);
+  padding: 1rem 1rem 1rem 0;
+  list-style: none;
+  text-align: end;
+}
+body {
+  background-image: url(../Project2/public/img/music1.jpg);
+  background-repeat: no-repeat;
+  background-size: 40rem;
+  background-color: rgba(0, 0, 0, 0.96);
+}
+div.quote-group {
+  text-align: center;
+  font-size: 1.75rem;
+  margin: 5rem 1rem 5rem 1rem;
+}
+p#author {
+  font-size: 1rem;
+}
+footer p {
+  font-style: italic;
+  text-align: center;
+  margin-top: 25rem;
+  padding: 1rem;
+}
+
+form {
+  margin: 4rem 25% 4rem 25%;
+  padding: 1rem;
+}
+button.btn-danger{
+  padding: 0;
+  border: 0;
+  background-color: var(--orange);
+}
+div.playlist-item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.playlist-header {
+  margin-top: 1rem ;
+  margin-left: 1rem;
+}
+div.playlist {
+  margin: 1rem;
+}
+form.form.new-playlist-form {
+  margin: 1.5rem;
+}

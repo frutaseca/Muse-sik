@@ -1,0 +1,27 @@
+<h3 class="playlist-header">Welcome back, {{user.name}}!!!</h3><br>
+
+<div class="playlist row d-flex justify-content-evenly align-items-center">
+  <div class="col-md-4">
+    <h4>Create a New Playlist:</h4>
+
+    <form class="form new-playlist-form">
+      <div class="form-group">
+        <label for="playlist-name">Playlist name:</label><br>
+        <input class="form-input" type="text" id="playlist-name" name="playlist-name" />
+      </div><br>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+  {{#if playlists.length}}
+  {{#each playlists as |playlist|}}
+  <div class="col-md-8">
+    <div class="playlist-item row justify-content-evenly align-items-center">
+      <h5 class="col-auto"><a href="">{{playlist.id}}. {{playlist.name}}</a></h5>
+      <button class="col-2 btn btn-sm btn-danger" data-id="{{playlist.id}}"><i class="fa-solid fa-trash"></i></button>
+    </div>
+  </div>
+  {{/each}}
+  {{/if}}
+</div>
