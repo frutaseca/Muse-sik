@@ -1,6 +1,50 @@
 const router = require('express').Router();
-const { Playlist } = require('../../models');
+const { Playlist, User } = require('../../models');
 const withAuth = require('../../utils/auth');
+
+router.get('/', async (req, res) => {
+    try {
+        const playlistData = await Playlist.findAll({
+            include: [
+                {
+                    model: User,
+                    attributes: ['name'],
+                },
+            ],
+        });
+console.log(playlistData);
+        const playlists = playlistData.map((playlist) => playlist.get({plain: true}));
+
+        res.render('homepage', {
+            playlists,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/:id', async (req, res) => {
+    try {
+        const playlistData = await Playlist.findByPk(req.params.id, {
+            include: [
+                {
+                    model:User,
+                    attributes: ['name'],
+                },
+            ],
+        });
+
+        const playlist = playlistData.get({plain: true});
+
+        res.render('playlist', {
+            ...playlist,
+            logged_in:req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 router.post('/', withAuth, async (req, res) => {
     try {
