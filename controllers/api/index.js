@@ -5,6 +5,6 @@ const playlistRoutes = require('./playlistRoutes')
 
 router.use('/users', userRoutes);
 router.use('/song', songRoutes);
-router.use('./playlist', playlistRoutes);
+router.use('/playlist', playlistRoutes);
 
 module.exports = router;

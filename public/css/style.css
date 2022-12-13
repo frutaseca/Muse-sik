@@ -74,7 +74,7 @@ nav ul {
   text-align: end;
 }
 body {
-  background-image: url(../Project2/public/img/music1.jpg);
+  background-image: url(/img/music1.jpg);
   background-repeat: no-repeat;
   background-size: 40rem;
   background-color: rgba(0, 0, 0, 0.96);

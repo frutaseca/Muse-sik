@@ -15,12 +15,12 @@
         rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Tangerine"
         />
-        <link rel="stylesheet" href="../../public/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="./css/style.css" />
     </head>
     <body>
         <header >
             <div class="d-flex justify-content-between">
-                <img src="./Project2/public/img/muse-sik.png" alt="muse-sik logo">
+                <img src="./img/muse-sik.png" alt="muse-sik logo">
             <!-- Conditionally render login or logout links -->
                 {{#if logged_in}}
                 <button id="btn-menu"><i class="fa-solid fa-bars"></i></button>
@@ -29,7 +29,7 @@
                 <ul class="nav-bar d-flex justify-content-evenly align-items-center">
                     <li><a href="">Favorite</a></li>
                     <li><a href="">Search</a></li>
-                    <li><a href="">Playlist</a></li>
+                    <li><button id="btn-playlist">Playlist</button></li>
                     <li><button id="logout">Log Out</button></li>
                 </ul>
             </nav>
@@ -49,4 +49,7 @@
     src="https://kit.fontawesome.com/30f6588d91.js"
     crossorigin="anonymous"
     ></script>
+    {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </html>

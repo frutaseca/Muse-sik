@@ -7,38 +7,28 @@ User.hasMany(Song, {
     onDelete: 'CASCADE'
 });
 
+Song.belongsTo(User, {
+    foreignKey: 'user_id'
+})
+
 User.hasMany(Playlist, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
+
+Playlist.belongsTo(User, {
+    foreignKey: 'user_id'
+})
 
 Playlist.hasMany(Song, {
     foreignKey: 'song_id',
     onDelete: "CASCADE"
 });
 
-Song.belongsToMany(Playlist, {
-    through: {
-        model: User,
-        unique: false
-    },
-    as: 'playlist_song'
-});
+Song.belongsTo(Playlist, {
+    foreignKey: 'song_id'
+})
 
-Song.belongsToMany(User, {
-    through: {
-        model: Playlist,
-        unique: false
-    },
-    as: 'user_song'
-});
 
-Playlist.belongsToMany(User, {
-    through: {
-        model: Song,
-        unique: false
-    },
-    as: 'user_playlist'
-});
 
 module.exports = { User, Song, Playlist };

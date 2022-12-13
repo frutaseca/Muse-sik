@@ -2,7 +2,7 @@ const sequelize = require('../config/connection');
 const { User, Song, Playlist } = require('../models');
 
 const userData = require('./userData.json');
-const songData = require('./musicData.json');
+const songData = require('./songData.json');
 const playlistData = require('./playlistData.json');
 
 const seedDatabase = async () => {
