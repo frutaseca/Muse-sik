@@ -1,4 +1,4 @@
-<h3 class="playlist-header">Welcome back, {{user.name}}!!!</h3><br>
+<h3 class="playlist-header">Welcome back, {{userName}}!!!</h3><br>
 
 <div class="playlist row d-flex justify-content-evenly align-items-center">
   <div class="col-md-4">
@@ -14,11 +14,13 @@
       </div>
     </form>
   </div>
-  {{#if playlists.length}}
-  {{#each playlists as |playlist|}}
+  {{#if playlist.length}}
+  {{#each playlist as |playlist|}}
   <div class="col-md-8">
     <div class="playlist-item row justify-content-evenly align-items-center">
-      <h5 class="col-auto"><a href="">{{playlist.id}}. {{playlist.name}}</a></h5>
+
+      {{!-- NEED TO ADD LINK TO HREF TO RENDER SONGS OF THAT PLAYLIST --}}
+      <h5 class="col-auto"><a href="">{{playlist.name}}</a></h5>
       <button class="col-2 btn btn-sm btn-danger" data-id="{{playlist.id}}"><i class="fa-solid fa-trash"></i></button>
     </div>
   </div>

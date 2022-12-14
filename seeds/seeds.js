@@ -1,33 +1,55 @@
-const sequelize = require('../config/connection');
-const { User, Song, Playlist } = require('../models');
+const sequelize = require("../config/connection");
+// const { User, Song, Playlist, SongPlaylist } = require('../models');
 
-const userData = require('./userData.json');
-const songData = require('./songData.json');
-const playlistData = require('./playlistData.json');
+const seedUser = require("./user-seed");
+const seedPlaylist = require("./playlist-seed");
+const seedSong = require("./song-seed");
+const seedPlaylistSong = require("./playlist-song-seed");
 
-const seedDatabase = async () => {
+// const seedDatabase = async () => {
+//   await sequelize.sync({ force: true });
+
+//   const users = await User.bulkCreate(userData, {
+//     individualHooks: true,
+//     returning: true,
+//   });
+
+//   for (const song of songData) {
+//     await Song.create({
+//       ...song,
+//       user_id: users[Math.floor(Math.random() * users.length)].id,
+//     });
+//   }
+
+//   for (const playlist of playlistData) {
+//     await Playlist.create({
+//       ...playlist,
+//       user_id: users[Math.floor(Math.random() * users.length)].id,
+//     });
+//   }
+
+//   process.exit(0);
+// };
+
+// seedDatabase();
+
+const seedAll = async () => {
   await sequelize.sync({ force: true });
+  console.log("\n----- DATABASE SYNCED -----\n");
 
-  const users = await User.bulkCreate(userData, {
-    individualHooks: true,
-    returning: true,
-  });
+  await seedUser();
+  console.log("\n----- USERS SEEDED -----\n");
 
-  for (const song of songData) {
-    await Song.create({
-      ...song,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }
+  await seedPlaylist();
+  console.log("\n----- PLAYLISTS SEEDED -----\n");
 
-  for (const playlist of playlistData) {
-    await Playlist.create({
-      ...playlist,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }
+  await seedSong();
+  console.log("\n----- SONGS SEEDED -----\n");
+
+  await seedPlaylistSong();
+  console.log("\n----- PLAYLIST SONGS SEEDED -----\n");
 
   process.exit(0);
 };
 
-seedDatabase();
+seedAll();
