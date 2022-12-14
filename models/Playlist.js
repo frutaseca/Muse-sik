@@ -15,10 +15,10 @@ Playlist.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
-      song_id: {
+      user_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'song',
+          model: 'user',
           key: 'id',
         },
       },
