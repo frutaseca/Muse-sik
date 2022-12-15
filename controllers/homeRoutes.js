@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User, Playlist, Song, PlaylistSong } = require("../models");
 const withAuth = require("../utils/auth");
-
+const chalk = require('chalk')
 router.get("/", async (req, res) => {
   try {
     const playlistData = await Playlist.findAll({
@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
-    console.log(err);
+    console.log(chalk.red(err));
     res.status(500).json(err);
   }
 });
@@ -48,7 +48,7 @@ router.get("/playlist", async (req, res) => {
 
     const playlist = playlistData.map((item) => item.get({ plain: true }));
 
-    console.log("playlist", playlist);
+    console.log(chalk.green("playlist", playlist));
 
     // playlistData.get({plain: true});
 
@@ -58,7 +58,7 @@ router.get("/playlist", async (req, res) => {
       userName: req.session.user_name,
     });
   } catch (err) {
-    console.log(err);
+    console.log(chalk.red(err));
     res.status(500).json(err);
   }
 });

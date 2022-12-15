@@ -5,7 +5,7 @@ const seedUser = require("./user-seed");
 const seedPlaylist = require("./playlist-seed");
 const seedSong = require("./song-seed");
 const seedPlaylistSong = require("./playlist-song-seed");
-
+const chalk = require("chalk")
 // const seedDatabase = async () => {
 //   await sequelize.sync({ force: true });
 
@@ -35,19 +35,19 @@ const seedPlaylistSong = require("./playlist-song-seed");
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
-  console.log("\n----- DATABASE SYNCED -----\n");
+  console.log(chalk.red("DATABASE SYNCED"));
 
   await seedUser();
-  console.log("\n----- USERS SEEDED -----\n");
+  console.log(chalk.blue(" USERS SEEDED "));
 
   await seedPlaylist();
-  console.log("\n----- PLAYLISTS SEEDED -----\n");
+  console.log(chalk.blue("PLAYLISTS SEEDED"));
 
   await seedSong();
-  console.log("\n----- SONGS SEEDED -----\n");
+  console.log(chalk.yellow("SONGS SEEDED"));
 
   await seedPlaylistSong();
-  console.log("\n----- PLAYLIST SONGS SEEDED -----\n");
+  console.log(chalk.green("\n----- PLAYLIST SONGS SEEDED -----\n"));
 
   process.exit(0);
 };
