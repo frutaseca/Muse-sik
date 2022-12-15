@@ -1,0 +1,10 @@
+{{#if playlist.length}}
+  {{#each playlist as |playlist|}}
+  <div class="col-md-8">
+    <div class="playlist-item row justify-content-evenly align-items-center">
+
+      {{!-- NEED TO ADD LINK TO HREF TO RENDER SONGS OF THAT PLAYLIST --}}
+      <h5 class="col-auto"><a href="/song">{{playlist.name}}</a></h5>
+      <button class="col-2 btn btn-sm btn-danger" data-id="{{playlist.id}}"><i class="fa-solid fa-trash"></i></button>
+    </div>
+  </div>

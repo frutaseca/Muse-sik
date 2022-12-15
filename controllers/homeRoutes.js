@@ -63,6 +63,19 @@ router.get("/playlist", async (req, res) => {
   }
 });
 
+router.get("/search", async (req, res) => {
+  try {
+    res.render("search", {
+      logged_in: req.session.logged_in,
+      userName: req.session.user_name,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
 // router.get('/', async (req, res) => {
 //     try {
 //         const songData = await Song.findAll({
@@ -106,6 +119,9 @@ router.get("/playlist", async (req, res) => {
 //         res.status(500).json(err);
 //     }
 // });
+
+
+
 
 router.get("/user", withAuth, async (req, res) => {
   try {
