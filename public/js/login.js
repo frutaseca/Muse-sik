@@ -1,4 +1,5 @@
-const loginFormHandler = async (event) => {
+
+  const loginFormHandler = async (event) => {
     event.preventDefault();
   
     // Collect values from the login form
@@ -51,4 +52,3 @@ const loginFormHandler = async (event) => {
   document
     .querySelector('.signup-form')
     .addEventListener('submit', signupFormHandler);
-  
