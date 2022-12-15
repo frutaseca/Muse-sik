@@ -17,6 +17,10 @@ img {
   max-width: 5rem;
   margin: 1.15rem;
 }
+h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
 /* nav {
     display: none;
 }
@@ -124,12 +128,44 @@ div.login-signup {
   margin-top: 1rem;
   margin-left: 1rem;
 }
-
+div.playlist-handlebar {
+  margin: 3rem;
+}
+div.song {
+  padding: 4rem;
+  text-align: left;
+  line-height: 3rem;
+}
 @media screen and (min-width: 640px) {
   body {
     background-image: url(/img/music2.jpg);
     background-repeat: no-repeat;
-    background-size: 80rem;
+    background-size: 140rem;
     background-color: rgba(0, 0, 0, 0.96);
+  }
+  h3 {
+    font-size: 3rem;
+    font-weight: bolder;
+  }
+  div.song {
+    padding: 2rem 8rem 2rem 8rem;
+    margin: 4rem 7rem 4rem 7rem;
+    text-align: left;
+    line-height: 3rem;
+    border-radius: .75rem;
+    background-color: rgba(0, 0, 0, 0.695);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  div.show-playlist {
+    padding: 5rem;
+    border-radius: .75rem;
+    background-color: rgba(0, 0, 0, 0.695);
+  }
+  h3 {
+    font-size: 4rem;
+    font-weight: bolder;
+    margin-bottom: 4rem;
   }
 }

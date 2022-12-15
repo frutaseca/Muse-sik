@@ -16,13 +16,14 @@ router.post("/search", withAuth, async (req, res) => {
   var holder = await axios
     .request(options)
     .then(function (response) {
-      console.log(response.data);
+      //where is this data?????
+      console.log('SONGSSS', response.data);
     })
     .catch(function (error) {
       console.error(error);
     });
 
-    res.json(JSON.parse(holder))
+    res.json(holder)
 });
 
 router.post("/", withAuth, async (req, res) => {

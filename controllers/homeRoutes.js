@@ -76,27 +76,28 @@ router.get("/search", async (req, res) => {
 });
 
 
-// router.get('/', async (req, res) => {
-//     try {
-//         const songData = await Song.findAll({
-//             include: [
-//                 {
-//                     model: User,
-//                     attributes: ['name'],
-//                 },
-//             ],
-//         });
+router.get('/song', async (req, res) => {
+    try {
+        const songData = await Song.findAll({
+            // include: [
+            //     {
+            //         model: User,
+            //         attributes: ['name'],
+            //     },
+            // ],
+            include: [{ all: true, nested: true }]
+        });
 
-//         const songs = songData.map((song) => song.get({plain: true }));
+        const songs = songData.map((song) => song.get({plain: true }));
 
-//         res.render('homepage', {
-//             songs,
-//             logged_in: req.session.logged_in
-//         });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
+        res.render('song', {
+            songs,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 // router.get('/song/:id', async (req, res) => {
 //     try {
