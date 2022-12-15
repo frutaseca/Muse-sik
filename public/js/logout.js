@@ -27,4 +27,4 @@ const logout = async () => {
   
   document.querySelector('#logout').addEventListener('click', logout);
 
-  document.querySelector('#btn-playlist').addEventListener('click', playlist);
+  // document.querySelector('#btn-playlist').addEventListener('click', playlist);
