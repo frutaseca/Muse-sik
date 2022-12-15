@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
     const playlists = playlistData.map((playlist) =>
       playlist.get({ plain: true })
     );
-    console.log(playlists);
+    console.log(chalk.blue((playlists)));
 
     res.render("homepage", {
       playlists,

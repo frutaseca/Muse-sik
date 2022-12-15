@@ -8,11 +8,21 @@ make pages only be accessible once they are logged in and each playlist page is 
 
 ## User Story
 ```
-
+AS A user
+I WANT to sign up for the website
+SO THAT I can create playlists for my music
 ```
 ## Acceptance Critera
 ```
-
+GIVEN a websie
+WHEN I access the first page
+THEN I click login on the top left
+WHEN I get onto said page I either sign in or sign up if I do not have an account
+THEN I am sent back to main page with navbar visible
+WHEN I click on the playlist button
+THEN I am sent to the playlist page where I can see my playlist if any or I can create a playlist
+WHEN I create a playlist it appears next to the input bar with a delete button next to my playlist
+THEN If I were to click on the delete button on a playlist the playlist will be deleted
 ```
 
 ## Contributors

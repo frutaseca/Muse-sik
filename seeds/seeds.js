@@ -35,19 +35,19 @@ const chalk = require("chalk")
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
-  console.log(chalk.red("DATABASE SYNCED"));
+  console.log(chalk.magenta("\n----- DATABASE SYNCED -----\n"));
 
   await seedUser();
-  console.log(chalk.blue(" USERS SEEDED "));
+  console.log(chalk.magenta("\n----- USERS SEEDED -----\n"));
 
   await seedPlaylist();
-  console.log(chalk.blue("PLAYLISTS SEEDED"));
+  console.log(chalk.magenta("\n----- PLAYLISTS SEEDED -----\n"));
 
   await seedSong();
-  console.log(chalk.yellow("SONGS SEEDED"));
+  console.log(chalk.magenta("\n----- SONGS SEEDED -----\n"));
 
   await seedPlaylistSong();
-  console.log(chalk.green("\n----- PLAYLIST SONGS SEEDED -----\n"));
+  console.log(chalk.bgMagenta("\n----- PLAYLIST SONGS SEEDED -----\n"));
 
   process.exit(0);
 };
