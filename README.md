@@ -21,6 +21,7 @@ Brandon Rodriguez<br>
 Faiyaz Alam<br>
 
 ## New Libary Used
-**Chalk-**is the third-party module that is used for styling the format of text and allows us to create our own themes in the node. js project.
+*Chalk*- is the third-party module that is used for styling the format of text and allows us to create our own themes in the node. js project.
 
 ## Live Link to Heroku Deployment
+https://stormy-crag-37004.herokuapp.com/ 
