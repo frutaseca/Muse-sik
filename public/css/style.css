@@ -131,7 +131,11 @@ div.login-signup {
 div.playlist-handlebar {
   margin: 3rem;
 }
-
+div.song {
+  padding: 4rem;
+  text-align: left;
+  line-height: 3rem;
+}
 @media screen and (min-width: 640px) {
   body {
     background-image: url(/img/music2.jpg);
@@ -142,6 +146,14 @@ div.playlist-handlebar {
   h3 {
     font-size: 3rem;
     font-weight: bolder;
+  }
+  div.song {
+    padding: 2rem 8rem 2rem 8rem;
+    margin: 4rem 7rem 4rem 7rem;
+    text-align: left;
+    line-height: 3rem;
+    border-radius: .75rem;
+    background-color: rgba(0, 0, 0, 0.695);
   }
 }
 
