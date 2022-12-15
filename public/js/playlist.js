@@ -26,7 +26,7 @@ const delButtonHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/playlist');
       } else {
         alert('Failed to delete project');
       }
